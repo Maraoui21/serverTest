@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Evenements{
+  IdEv Int @id @default(autoincrement())
+  Titre String
+  ImgPath String
+  Date DateTime
+  Form Boolean @default(false)
+  Contenu String @db.Text
+  Participant Participants[]
+}
+
+model Participants{
+  IdPart Int @id @default(autoincrement())
+  Nom String
+  Tel String
+  email String
+  Prenom String
+  Evenement Evenements @relation(fields: [EvenementID],references: [IdEv])
+  EvenementID Int
+}
+
+model users{
+  IdUser Int @id @default(autoincrement())
+  Nom String
+  Prenom String
+  Password String
+  email String
+  Phone String
+  UserRole Role @default(Author)
+}
+
+enum Role {
+  admin
+  Author
+}
