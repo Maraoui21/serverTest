@@ -19,7 +19,7 @@ app.use('/users',require('./routes/Users'));
 
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/public/index.html')
+    res.send({rep:"---> running <---"});
 })
 
 app.use((req, res, next) => {
