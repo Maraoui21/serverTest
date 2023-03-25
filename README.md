@@ -1,6 +1,6 @@
 # serverTest
 This is a REST-API created with expressJs and mysql managing events
-<h1>API ENDPOINT </h1>
+<h1>API ENDPOINTS </h1>
 <h4>To get all posted events</h4>
 <a href="https://event4manager.onrender.com/api/evenments">https://event4manager.onrender.com/api/evenments</a>
 <h4>To get event by id</h4>
